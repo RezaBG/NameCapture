@@ -1,2 +1,3 @@
 # todolist-v2-starting-files
-Use Mangoose
+Use MongoDB
+Use Mongoose
