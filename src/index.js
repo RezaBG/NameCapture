@@ -1,11 +1,7 @@
-import SimpleInput from "./components/SimpleInput";
+import ReactDOM from "react-dom/client";
 
-function App() {
-  return (
-    <div className="app">
-      <SimpleInput />
-    </div>
-  );
-}
+import "./index.css";
+import App from "./App";
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
