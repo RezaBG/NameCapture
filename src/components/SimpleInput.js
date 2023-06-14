@@ -7,10 +7,10 @@ const SimpleInput = (props) => {
   const enteredNameIsValid = enteredName.trim() !== "";
   const nameInputIsInvalid = !enteredNameIsValid && enteredNameTouched;
 
-  let formIsvalid = false;
+  let formIsValid = false;
 
   if (enteredNameIsValid) {
-    formIsvalid = true;
+    formIsValid = true;
   }
 
   const nameInputChangeHandler = (event) => {
@@ -18,6 +18,10 @@ const SimpleInput = (props) => {
   };
 
   const nameInputBlurHandler = (event) => {
+    setEnteredNameTouched(true);
+  };
+
+  const formSubmissionHandler = (event) => {
     event.preventDefault();
 
     setEnteredNameTouched(true);
@@ -28,6 +32,7 @@ const SimpleInput = (props) => {
 
     console.log(enteredName);
 
+    // nameInputRef.current.value = ''; => NOT IDEAL, DON'T MANIPULATE THE DOM
     setEnteredName("");
     setEnteredNameTouched(false);
   };
@@ -41,7 +46,6 @@ const SimpleInput = (props) => {
       <div className={nameInputClasses}>
         <label htmlFor="name">Your Name</label>
         <input
-          ref={nameInputRef}
           type="text"
           id="name"
           onChange={nameInputChangeHandler}
@@ -53,7 +57,7 @@ const SimpleInput = (props) => {
         )}
       </div>
       <div className="form-actions">
-        <button>Submit</button>
+        <button disabled={!formIsValid}>Submit</button>
       </div>
     </form>
   );
