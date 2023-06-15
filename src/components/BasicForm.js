@@ -37,6 +37,7 @@ const BasicForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+
     if (!formIsValid) {
       return;
     }
@@ -60,7 +61,7 @@ const BasicForm = (props) => {
   return (
     <form onSubmit={submitHandler}>
       <div className="control-group">
-        <div className={firstNameHasError}>
+        <div className={firstNameClasses}>
           <label htmlFor="name">First Name</label>
           <input
             type="text"
