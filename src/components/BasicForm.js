@@ -10,13 +10,13 @@ const BasicForm = (props) => {
           <label htmlFor="name">Last Name</label>
           <input type="text" id="name" />
         </div>
-        <div className="form-control">
-          <label htmlFor="name">E-Mail Address</label>
-          <label type="text" id="name"></label>
-        </div>
-        <div className="form-actions">
-          <button>Submit</button>
-        </div>
+      </div>
+      <div className="form-control">
+        <label htmlFor="name">E-Mail Address</label>
+        <input type="text" id="name" />
+      </div>
+      <div className="form-actions">
+        <button>Submit</button>
       </div>
     </form>
   );
